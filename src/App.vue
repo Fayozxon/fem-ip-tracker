@@ -15,7 +15,7 @@ export default {
   methods: {
     async loadData(ipAddress) {
       try {
-        const res = await axios.get(`http://ip-api.com/json/${ipAddress}?fields=status,message,country,regionName,city,lat,lon,timezone,isp,org,as,query`);
+        const res = await fetch(`http://ip-api.com/json/${ipAddress}?fields=status,message,country,regionName,city,lat,lon,timezone,isp,org,as,query`);
         this.locationData = res.data;
       } catch(err) {
         alert(err);
