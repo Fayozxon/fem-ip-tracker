@@ -16,7 +16,7 @@ export default {
     async loadData(ipAddress) {
       try {
         const res = await fetch(`http://ip-api.com/json/${ipAddress}?fields=status,message,country,regionName,city,lat,lon,timezone,isp,org,as,query`);
-        this.locationData = res.data;
+        this.locationData = await res.json();
       } catch(err) {
         alert(err);
       }
